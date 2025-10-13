@@ -1,25 +1,32 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import { themes } from "@/app/config/themeConfig";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function HeroSection() {
   const { t } = useTranslation();
-   const { theme } = useTheme();
+  const { theme } = useTheme();
   const currentTheme = themes[theme] || themes.blue;
 
   // Variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.25 },
     },
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut" as const, // ✅ التصحيح هنا
+      },
+    },
   };
 
   // Dynamic particles based on theme
@@ -46,6 +53,7 @@ export default function HeroSection() {
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
         className={`absolute top-20 left-10 w-28 h-28 ${color1} blur-3xl rounded-full`}
       ></motion.div>
+
       <motion.div
         animate={{ y: [0, -25, 0], x: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
@@ -92,7 +100,6 @@ export default function HeroSection() {
           variants={fadeUp}
           className="flex justify-center md:justify-start gap-4 mt-10"
         >
-        
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
@@ -114,7 +121,7 @@ export default function HeroSection() {
         <motion.img
           whileHover={{ y: -10, rotate: 1 }}
           transition={{ type: "spring", stiffness: 150 }}
-          src={"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"}
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
           alt="Travel"
           className="w-full rounded-3xl shadow-2xl object-cover"
         />
