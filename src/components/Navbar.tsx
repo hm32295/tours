@@ -6,15 +6,24 @@ import { themes } from "@/app/config/themeConfig";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import Logo from "./Logo";
-import { useRouter } from "next/navigation";
-const links =[{name:"home" ,link:'/'}, {name:"about" ,link:'/about'}, {name:"services" ,link:'/services'}, {name:"tours" ,link:'/tours'}, {name:"contact" ,link:'/contact'}]
+import { usePathname, useRouter } from "next/navigation";
+
+const links = [
+  { name: "home", link: "/" },
+  { name: "about", link: "/about" },
+  { name: "services", link: "/services" },
+  { name: "tours", link: "/tours" },
+  { name: "contact", link: "/contact" },
+];
+
 export default function NavbarModal() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
   const currentTheme = themes[theme];
-  const router = useRouter()
+  const router = useRouter();
+  const pathname = usePathname(); // لمعرفة الصفحة الحالية
 
   useEffect(() => {
     setMounted(true);
@@ -30,8 +39,8 @@ export default function NavbarModal() {
 
   return createPortal(
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-[9999] w-[90%] md:w-[85%] 
-      rounded-2xl px-6 py-3 backdrop-blur-xl shadow-2xl border ${currentTheme.border} 
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-[9999] w-[90%] md:w-[85%]
+      rounded-2xl px-6 py-3 backdrop-blur-xl shadow-2xl border ${currentTheme.border}
       transition-all duration-700 ${currentTheme.background} ${currentTheme.text}`}
     >
       <div className="flex justify-between items-center">
@@ -40,18 +49,33 @@ export default function NavbarModal() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 font-semibold">
-          {links.map((key) => (
-            <button
-              key={key.name}
-              className="relative cursor-pointer group transition-all duration-300"
-              onClick={()=> router.push(key.link)}
-            >
-              <span className="group-hover:text-blue-500 transition-all duration-300">
-                {t(key.name)}
-              </span>
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300" />
-            </button>
-          ))}
+          {links.map((key) => {
+            const isActive = pathname === key.link;
+            return (
+              <button
+                key={key.name}
+                onClick={() => router.push(key.link)}
+                className={`relative cursor-pointer group transition-all duration-300 ${
+                  isActive ? "text-blue-500" : ""
+                }`}
+              >
+                <span
+                  className={`transition-all duration-300 ${
+                    isActive
+                      ? "text-blue-500"
+                      : "group-hover:text-blue-500"
+                  }`}
+                >
+                  {t(key.name)}
+                </span>
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-blue-500 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </button>
+            );
+          })}
         </div>
 
         {/* Desktop Actions */}
@@ -83,18 +107,28 @@ export default function NavbarModal() {
       {/* Mobile Menu */}
       <div
         className={`overflow-hidden flex flex-col items-center gap-4 transition-all duration-700 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0 pointer-events-none"
+          isOpen
+            ? "max-h-96 opacity-100 mt-4"
+            : "max-h-0 opacity-0 mt-0 pointer-events-none"
         }`}
       >
-        {links.map((key) => (
-          <button
-            key={key.name}
-            className="hover:text-blue-500 text-lg transition duration-300 cursor-pointer"
-            onClick={() => {setIsOpen(false) ;router.push(key.link)}}
-          >
-            {t(key.name)}
-          </button>
-        ))}
+        {links.map((key) => {
+          const isActive = pathname === key.link;
+          return (
+            <button
+              key={key.name}
+              onClick={() => {
+                setIsOpen(false);
+                router.push(key.link);
+              }}
+              className={`text-lg transition duration-300 cursor-pointer ${
+                isActive ? "text-blue-500 font-bold" : "hover:text-blue-500"
+              }`}
+            >
+              {t(key.name)}
+            </button>
+          );
+        })}
 
         <div className="flex gap-3 mt-3">
           <button
