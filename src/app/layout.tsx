@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       
         <ThemeProvider>
           <Navbar />
-          <main className=" transition-all duration-700 ease-in-out transform-gpu">
+          <main className="mt-5 transition-all duration-700 ease-in-out transform-gpu">
           
             {children}
           </main>
