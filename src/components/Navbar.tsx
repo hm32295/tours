@@ -6,13 +6,15 @@ import { themes } from "@/app/config/themeConfig";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import Logo from "./Logo";
-
+import { useRouter } from "next/navigation";
+const links =[{name:"home" ,link:'/'}, {name:"about" ,link:'/about'}, {name:"services" ,link:'/services'}, {name:"tours" ,link:'/tours'}, {name:"contact" ,link:'/contact'}]
 export default function NavbarModal() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
   const currentTheme = themes[theme];
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true);
@@ -38,13 +40,14 @@ export default function NavbarModal() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 font-semibold">
-          {["home", "about", "services", "tours", "contact"].map((key) => (
+          {links.map((key) => (
             <button
-              key={key}
+              key={key.name}
               className="relative cursor-pointer group transition-all duration-300"
+              onClick={()=> router.push(key.link)}
             >
               <span className="group-hover:text-blue-500 transition-all duration-300">
-                {t(key)}
+                {t(key.name)}
               </span>
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-500 group-hover:w-full transition-all duration-300" />
             </button>
@@ -83,13 +86,13 @@ export default function NavbarModal() {
           isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0 pointer-events-none"
         }`}
       >
-        {["home", "about", "services", "tours", "contact"].map((key) => (
+        {links.map((key) => (
           <button
-            key={key}
+            key={key.name}
             className="hover:text-blue-500 text-lg transition duration-300 cursor-pointer"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {setIsOpen(false) ;router.push(key.link)}}
           >
-            {t(key)}
+            {t(key.name)}
           </button>
         ))}
 

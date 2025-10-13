@@ -24,7 +24,7 @@ export default function HeroSection() {
       y: 0,
       transition: {
         duration: 0.9,
-        ease: "easeOut" as const, // ✅ التصحيح هنا
+        ease: "easeOut" as const, 
       },
     },
   };

@@ -4,46 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@/context/ThemeContext";
+import { tours } from "@/app/data/tours";
 
-const tours = [
-  {
-    id: 1,
-    name_en: "Paris Adventure",
-    name_ar: "مغامرة باريس",
-    price: "$499",
-    img: "/tours1.jpeg",
-  },
-  {
-    id: 2,
-    name_en: "Bali Paradise",
-    name_ar: "جنة بالي",
-    price: "$699",
-    img: "/tours2.jpeg",
-  },
-  {
-    id: 3,
-    name_en: "Swiss Alps",
-    name_ar: "جبال الألب السويسرية",
-    price: "$899",
-    img: "/tours4.jpeg",
-  },
-  {
-    id: 4,
-    name_en: "Egyptian Pyramids",
-    name_ar: "أهرامات مصر",
-    price: "$399",
-    img: "/tours3.jpeg",
-  },
-  {
-    id: 5,
-    name_en: "Hurghada",
-    name_ar: "الغردقة",
-    price: "$399",
-    img: "/tours6.jpeg",
-  },
-];
 
 export default function PopularTours() {
+  const toursShow = tours.slice(0,4)
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
   const isArabic = i18n.language === "ar";
@@ -90,7 +55,7 @@ export default function PopularTours() {
         </motion.p>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {tours.map((tour, index) => (
+          {toursShow.map((tour, index) => (
             <motion.div
               key={tour.id}
               className={`relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer ${
@@ -107,6 +72,7 @@ export default function PopularTours() {
             >
               <div className="relative h-72 w-full overflow-hidden">
                 <Image
+                unoptimized
                   src={tour.img}
                   alt={isArabic ? tour.name_ar : tour.name_en}
                   fill

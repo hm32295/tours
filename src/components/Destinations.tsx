@@ -4,24 +4,13 @@ import { motion } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { themes } from "@/app/config/themeConfig";
+import { destinations } from "@/app/data/destinations";
 
-import image1 from "../../public/images.jpeg";
-import image2 from "../../public/images (1).jpeg";
-import image3 from "../../public/images (2).jpeg";
-import image4 from "../../public/images (3).jpeg";
-
-const destinations = [
-  { id: 1, nameKey: "destinations.paris.name", descKey: "destinations.paris.desc", image: image1 },
-  { id: 2, nameKey: "destinations.tokyo.name", descKey: "destinations.tokyo.desc", image: image2 },
-  { id: 3, nameKey: "destinations.cairo.name", descKey: "destinations.cairo.desc", image: image3 },
-  { id: 4, nameKey: "destinations.maldives.name", descKey: "destinations.maldives.desc", image: image4 },
-];
 
 export default function Destinations() {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
-  // خلفيات مخصصة للكارد حسب الثيم
   const cardColors: Record<string, string> = {
     blue: "bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300",
     sand: "bg-gradient-to-br from-yellow-100 via-orange-100 to-orange-200",
@@ -34,7 +23,6 @@ export default function Destinations() {
     dark: "from-black/80 via-gray-800/60 to-transparent",
   };
 
-  // اللون الديناميكي للنص داخل محتوى الكارد (يتغير بناءً على الثيم)
   const contentTextClass = themes[theme]?.text ?? "text-gray-900";
 
   return (
@@ -79,7 +67,6 @@ export default function Destinations() {
                 </motion.h3>
               </div>
 
-              {/* النص والزر — الآن النص يعتمد على الثيم */}
               <div className="p-6 text-left flex flex-col justify-between h-56">
                 <p className={`${contentTextClass} mb-6 leading-relaxed`}>
                   {t(dest.descKey)}

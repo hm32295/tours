@@ -36,32 +36,24 @@
   },
 
    "services_": {
-    "title": "Our Premium Services",
-    "flight": {
-      "title": "Flight Booking",
-      "desc": "We offer affordable and fast flight booking services to your favorite destinations."
-    },
-    "hotel": {
-      "title": "Hotel Reservations",
-      "desc": "Find and book the best hotels with comfort and great deals."
-    },
-    "tour": {
-      "title": "Guided Tours",
-      "desc": "Enjoy professional guided tours and unforgettable travel experiences."
-    },
-    "visa": {
-      "title": "Visa Assistance",
-      "desc": "Simplify your visa process with our dedicated support."
-    },
-    "vacation": {
-      "title": "Vacation Packages",
-      "desc": "Explore tailor-made vacation packages that suit your needs."
-    },
-    "transport": {
-      "title": "Transport Services",
-      "desc": "We provide airport transfers and local transport for a smooth journey."
-    }
-  },
+  "title": "Our Services",
+  "flight": { "title": "Flight Booking", "desc": "Book flights to any destination with exclusive offers." },
+  "hotel": { "title": "Hotel Reservations", "desc": "Find and book the best hotels at great prices." },
+  "tour": { "title": "Tour Packages", "desc": "Enjoy unforgettable tours across the world." },
+  "visa": { "title": "Visa Assistance", "desc": "We help you with all visa processing requirements." },
+  "vacation": { "title": "Vacation Planning", "desc": "Create your dream holiday with our experts." },
+  "transport": { "title": "Transportation", "desc": "Reliable airport transfers and city rides." },
+  "cruise": { "title": "Cruise Trips", "desc": "Luxury cruise experiences for all destinations." },
+  "events": { "title": "Event Management", "desc": "We organize conferences, events, and meetings." },
+  "group": { "title": "Group Travel", "desc": "Special packages for families and groups." },
+  "payment": { "title": "Easy Payments", "desc": "Flexible and secure payment methods." },
+  "photography": { "title": "Photography Tours", "desc": "Capture your memories with professional photos." },
+  "guide": { "title": "Tour Guide Services", "desc": "Local guides for authentic experiences." },
+  "offers": { "title": "Special Offers", "desc": "Exclusive deals and discounts all year round." },
+  "support": { "title": "24/7 Support", "desc": "We are always available to assist you." },
+  "corporate": { "title": "Corporate Services", "desc": "Customized business travel and partnerships." }
+}
+,
 
    "testimonials_title": "What Our Clients Say",
 
@@ -77,5 +69,32 @@
   "quick_links": "Quick Links",
 
   "follow_us": "Follow Us",
-  "rights_reserved": "All rights reserved."
+  "rights_reserved": "All rights reserved.",
+
+  "about_": {
+  "title": "About Us",
+  "subtitle": "We create unforgettable travel experiences around the world.",
+  "mission": {
+    "title": "Our Mission",
+    "desc": "Our mission is to make travel simple, joyful, and personalized for every explorer."
+  },
+  "values": {
+    "title": "Our Values",
+    "item1": "Excellence in every service",
+    "item2": "Innovation that inspires",
+    "item3": "Integrity in all our actions"
+  },
+  "team": {
+    "title": "Meet the Team",
+    "desc": "Behind our success is a passionate team committed to delivering the best experiences.",
+    "name": "Hamza Mohamed",
+    "role": "Founder & Lead Developer"
+  }
+},
+"tours_":{
+  "title": "Our Tours",
+  "subtitle": "Explore the world with us and find your next great adventure",
+  "bookNow": "Book Now"
+}
+
 }
