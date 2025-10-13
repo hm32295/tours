@@ -1,0 +1,81 @@
+{
+  "home": "Home",
+  "about": "About Us",
+  "services": "Services",
+  "tours": "Tours",
+  "contact": "Contact",
+  "language": "Language",
+  "theme": "Theme",
+  "welcome": "Welcome to our Sea Tours Company",
+  
+  "discover": "Discover",
+  "the_world_with_us": "the world with us",
+  "explore_new_destinations_and_experiences_with_our_professional_team": "Explore new destinations and experiences with our professional team.",
+  "book_now": "Book Now",
+  "learn_more": "Learn More",
+
+  "destinations": {
+    "title": "Popular Destinations",
+    "explore": "Explore",
+    "paris": {
+      "name": "Paris, France",
+      "desc": "The city of light and love — explore iconic landmarks and culture."
+    },
+    "tokyo": {
+      "name": "Tokyo, Japan",
+      "desc": "A blend of tradition and technology in one vibrant city."
+    },
+    "cairo": {
+      "name": "Cairo, Egypt",
+      "desc": "Discover the ancient wonders of the Pyramids and the Nile."
+    },
+    "maldives": {
+      "name": "Maldives",
+      "desc": "Crystal-clear waters, coral reefs, and relaxing luxury resorts."
+    }
+  },
+
+   "services_": {
+    "title": "Our Premium Services",
+    "flight": {
+      "title": "Flight Booking",
+      "desc": "We offer affordable and fast flight booking services to your favorite destinations."
+    },
+    "hotel": {
+      "title": "Hotel Reservations",
+      "desc": "Find and book the best hotels with comfort and great deals."
+    },
+    "tour": {
+      "title": "Guided Tours",
+      "desc": "Enjoy professional guided tours and unforgettable travel experiences."
+    },
+    "visa": {
+      "title": "Visa Assistance",
+      "desc": "Simplify your visa process with our dedicated support."
+    },
+    "vacation": {
+      "title": "Vacation Packages",
+      "desc": "Explore tailor-made vacation packages that suit your needs."
+    },
+    "transport": {
+      "title": "Transport Services",
+      "desc": "We provide airport transfers and local transport for a smooth journey."
+    }
+  },
+
+   "testimonials_title": "What Our Clients Say",
+
+    "popular_tours": "Popular Tours",
+  "choose_your_next_destination": "Choose your next destination with us",
+  "title": "Ready to Discover Your Next Adventure?",
+  "description": "Book your trip with us today and enjoy an unforgettable journey full of excitement and beauty.",
+  "bookNow": "Book Now",
+  "contactUs": "Contact Us",
+
+  "brand_name": "TravelEase",
+  "footer_description": "Discover the world with comfort and adventure. We help you find the perfect journey that suits your dreams.",
+  "quick_links": "Quick Links",
+
+  "follow_us": "Follow Us",
+  "rights_reserved": "All rights reserved."
+}
