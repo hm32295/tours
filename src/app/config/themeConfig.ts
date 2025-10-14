@@ -18,6 +18,7 @@ export const themes = {
       "linear-gradient(135deg, rgba(0,174,255,0.25) 0%, rgba(147,233,255,0.15) 100%)",
     focusRing: "focus:ring-blue-400/50",
     inputText: "text-gray-900",
+     iconColor: "text-blue-500",
   },
 
   sand: {
@@ -39,6 +40,7 @@ export const themes = {
       "linear-gradient(135deg, rgba(255,200,100,0.25) 0%, rgba(255,240,150,0.1) 100%)",
     focusRing: "focus:ring-cyan-200/50",
     inputText: "text-gray-900",
+     iconColor: "text-cyan-300",
   },
 
   dark: {
@@ -60,5 +62,6 @@ export const themes = {
       "linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.1) 100%)",
     focusRing: "focus:ring-purple-400/50",
     inputText: "text-white",
+    iconColor: "text-white",
   },
 };

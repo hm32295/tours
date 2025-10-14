@@ -4,10 +4,11 @@ import { useParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MapPin, Clock, DollarSign, Star } from "lucide-react";
+import { MapPin, Clock, DollarSign, Star, MessageCircle } from "lucide-react";
 import { destinations } from "@/app/data/destinations";
 import { useTheme } from "@/context/ThemeContext";
 import { themes } from "@/app/config/themeConfig";
+import { contactData } from "@/app/data/contactData";
 
 export default function DestinationDetails() {
   const { id } = useParams();
@@ -16,171 +17,160 @@ export default function DestinationDetails() {
   const selectedTheme = themes[theme];
 
   const dest = destinations.find((d) => d.id === Number(id));
-
   if (!dest)
     return (
       <div
-        className={`${selectedTheme.text} text-center mt-20 text-xl font-semibold`}
+        className={`text-center mt-20 text-2xl font-semibold ${selectedTheme.textSecondary}`}
       >
         {t("details.notFound")}
       </div>
     );
 
+  const phoneNumber = contactData.phone;
+  const message = encodeURIComponent(
+    `مرحبًا! 🌍\nأرغب في حجز الرحلة التالية:\n\n📍 الوجهة: ${t(
+      dest.nameKey
+    )}\n🏖️ الدولة: ${dest.country}\n🕒 المدة: ${
+      dest.duration
+    }\n💰 السعر: ${dest.price}\n⭐ التقييم: ${
+      dest.rating
+    }\n\nمن فضلك أرسل لي التفاصيل الكاملة للحجز.`
+  );
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
   return (
     <div
-      className={`${selectedTheme.background} min-h-screen pb-20 transition-colors duration-500`}
+      className={`${selectedTheme.background} min-h-screen flex flex-col items-center transition-all duration-500`}
     >
-      {/* ===== Hero Section ===== */}
-      <section className="relative h-[75vh] overflow-hidden rounded-b-[3rem]">
+      {/* ==== HERO SECTION ==== */}
+      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden rounded-b-[3rem] shadow-2xl">
         <Image
           src={dest.image}
           alt={t(dest.nameKey)}
           fill
+          className="object-cover scale-105 transition-transform duration-[8s]"
           priority
-          className="object-cover brightness-[0.6]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center max-w-4xl px-6">
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-2xl"
+        
+        <div
+          className={`absolute inset-0 ${"bg-gradient-to-b from-black/70 via-black/40 to-transparent" }`}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <h1
+            className={`text-6xl md:text-7xl font-extrabold mb-4 
+            text-white drop-shadow-[0_8px_15px_rgba(0,0,0,0.9)]`}
           >
             {t(dest.nameKey)}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-5 text-gray-200 text-lg md:text-xl leading-relaxed"
+          </h1>
+          <p
+            className={`text-lg md:text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]`}
           >
             {t(dest.descKey)}
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ===== Info & Highlights ===== */}
-      <section className="max-w-7xl mx-auto mt-20 px-6 grid lg:grid-cols-3 gap-10">
-        {/* Info Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className={`rounded-3xl p-8 shadow-lg backdrop-blur-md border ${selectedTheme.border} ${selectedTheme.cardBg}`}
-        >
-          <h2
-            className={`text-2xl font-semibold mb-6 border-b pb-3 ${selectedTheme.text}`}
-          >
-            {t("details.information")}
-          </h2>
-          <ul className={`space-y-4 text-base ${selectedTheme.textSecondary}`}>
-            <li className="flex items-center gap-3">
-              <MapPin className="w-5 h-5 text-sky-500" />
-              <span>{dest.country}</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Clock className="w-5 h-5 text-amber-500" />
-              <span>{dest.duration}</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <DollarSign className="w-5 h-5 text-green-500" />
-              <span>{dest.price}</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Star className="w-5 h-5 text-yellow-400" />
-              <span>{dest.rating}</span>
-            </li>
-          </ul>
-          <p className={`mt-6 text-sm ${selectedTheme.textSecondary}`}>
-            <strong>{t("details.bestTime")}:</strong> {dest.bestTime}
           </p>
         </motion.div>
-
-        {/* Highlights & Activities */}
-        <div className="lg:col-span-2 space-y-12">
-          {/* Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className={`rounded-3xl p-8 shadow-md border ${selectedTheme.border} ${selectedTheme.cardBg}`}
-          >
-            <h3
-              className={`text-3xl font-semibold mb-8 text-center ${selectedTheme.text}`}
-            >
-              {t("details.highlights")}
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {dest.highlightsKey.map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className={`p-5 rounded-xl border ${selectedTheme.border} backdrop-blur-md  shadow-sm text-center transition`}
-                >
-                  <p className={selectedTheme.text}>{t(item)}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Activities */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className={`rounded-3xl p-8 shadow-md border ${selectedTheme.border} ${selectedTheme.cardBg}`}
-          >
-            <h3
-              className={`text-3xl font-semibold mb-8 text-center ${selectedTheme.text}`}
-            >
-              {t("details.activities")}
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {dest.activitiesKey.map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className={`p-5 rounded-xl border ${selectedTheme.border} backdrop-blur-md text-center shadow-sm transition`}
-                >
-                  <p className={selectedTheme.text}>{t(item)}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
       </section>
 
-      {/* ===== Gallery Section ===== */}
+      {/* ==== INFO SECTION ==== */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="max-w-7xl mx-auto mt-24 px-6"
+        className="max-w-6xl mx-auto px-6 -mt-20 relative z-20 grid sm:grid-cols-2 md:grid-cols-4 gap-6"
       >
-        <h3
-          className={`text-3xl font-semibold mb-10 text-center ${selectedTheme.text}`}
-        >
-          {t("details.gallery")}
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {dest.gallery.map((img, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-2xl shadow-md"
-            >
-              <Image
-                src={img}
-                alt={t(dest.nameKey)}
-                width={600}
-                height={400}
-                className="w-full h-56 object-cover hover:brightness-110 transition-all duration-300"
-              />
-            </motion.div>
-          ))}
-        </div>
+        {[
+          {
+            icon: <MapPin className={`${selectedTheme.iconColor} w-7 h-7`} />,
+            label: dest.country,
+          },
+          {
+            icon: <Clock className={`${selectedTheme.iconColor} w-7 h-7`} />,
+            label: dest.duration,
+          },
+          {
+            icon: <DollarSign className={`${selectedTheme.iconColor} w-7 h-7`} />,
+            label: dest.price,
+          },
+          {
+            icon: <Star className={`${selectedTheme.iconColor} w-7 h-7`} />,
+            label: dest.rating,
+          },
+        ].map((info, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ scale: 1.05, y: -6 }}
+            transition={{ duration: 0.3 }}
+            className={`${selectedTheme.cardBg} rounded-2xl p-6 shadow-xl text-center border border-white/10 transition-all duration-500 hover:shadow-2xl`}
+          >
+            <div className="flex justify-center mb-3">{info.icon}</div>
+            <p className={`text-lg font-semibold ${selectedTheme.text}`}>
+              {info.label}
+            </p>
+          </motion.div>
+        ))}
       </motion.section>
+
+      {/* ==== DETAILS SECTION ==== */}
+      <section className="max-w-7xl mx-auto px-6 mt-28 space-y-20">
+        {[{ title: t("details.highlights"), items: dest.highlightsKey },
+          { title: t("details.activities"), items: dest.activitiesKey }]
+          .map((section, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2
+              className={`text-4xl font-bold mb-12 text-center ${selectedTheme.text}`}
+            >
+              {section.title}
+            </h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {section.items.map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0px 10px 25px rgba(0,0,0,0.3)",
+                  }}
+                  className={`${selectedTheme.cardBg} rounded-2xl p-6 text-center transition-all duration-300`}
+                >
+                  <p
+                    className={`text-lg font-medium ${selectedTheme.textSecondary}`}
+                  >
+                    {t(item)}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </section>
+
+      {/* ==== BOOKING BUTTON ==== */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-20 mt-20"
+      >
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex capitalize items-center gap-3 px-10 py-5 ${selectedTheme.buttonPrimary} text-white text-xl font-semibold rounded-full shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-105`}
+        >
+          <MessageCircle className="w-7 h-7" />
+          {t("details.bookNow") || "احجز الآن عبر واتساب"}
+        </a>
+      </motion.div>
     </div>
   );
 }

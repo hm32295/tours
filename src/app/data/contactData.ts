@@ -1,5 +1,6 @@
 export const contactData = {
   title_en: "Get in Touch",
+  phone:'01124475468',
   title_ar: "تواصل معنا",
   subtitle_en:
     "We’d love to hear from you! Whether you have a question, feedback, or a business inquiry — drop us a message.",
@@ -19,16 +20,16 @@ export const contactData = {
       icon: "📧",
       label_en: "Email",
       label_ar: "البريد الإلكتروني",
-      value_en: "info@travelwithus.com",
-      value_ar: "info@travelwithus.com",
+      value_en: "hm32295@gmail.com",
+      value_ar: "hm32295@gmail.com",
     },
     {
       id: 3,
       icon: "📞",
       label_en: "Phone",
       label_ar: "الهاتف",
-      value_en: "+20 100 234 5678",
-      value_ar: "+20 100 234 5678",
+      value_en: "+20 112 447 5468",
+      value_ar: "+20 112 447 5468",
     },
   ],
 };
