@@ -15,23 +15,64 @@
   "learn_more": "Learn More",
 
   "destinations": {
-    "title": "Popular Destinations",
-    "explore": "Explore",
+    "explore": "explore",
+
+    "title":"destinations",
     "paris": {
-      "name": "Paris, France",
-      "desc": "The city of light and love — explore iconic landmarks and culture."
+      "name": "Paris",
+      "desc": "Experience the charm of Paris — the city of lights, art, and romance. Discover iconic landmarks, world-class cuisine, and vibrant culture.",
+      "highlights": {
+        "eiffel": "Eiffel Tower",
+        "louvre": "Louvre Museum",
+        "seine": "Seine River Cruise"
+      },
+      "activities": {
+        "cruise": "Romantic Seine Cruise",
+        "museum": "Art and History Tour",
+        "cafe": "Parisian Café Experience"
+      }
     },
     "tokyo": {
-      "name": "Tokyo, Japan",
-      "desc": "A blend of tradition and technology in one vibrant city."
+      "name": "Tokyo",
+      "desc": "Dive into the fascinating blend of tradition and technology in Tokyo. Explore neon streets, ancient temples, and incredible cuisine.",
+      "highlights": {
+        "shibuya": "Shibuya Crossing",
+        "sensoji": "Senso-ji Temple",
+        "mountFuji": "Mount Fuji Viewpoint"
+      },
+      "activities": {
+        "foodTour": "Street Food Tour",
+        "shopping": "Shopping in Akihabara",
+        "culture": "Traditional Tea Ceremony"
+      }
     },
     "cairo": {
-      "name": "Cairo, Egypt",
-      "desc": "Discover the ancient wonders of the Pyramids and the Nile."
+      "name": "Cairo",
+      "desc": "Step back in time to the land of Pharaohs. Cairo offers timeless history, vibrant souks, and the majestic River Nile.",
+      "highlights": {
+        "pyramids": "Pyramids of Giza",
+        "museum": "Egyptian Museum",
+        "nile": "Nile River View"
+      },
+      "activities": {
+        "boat": "Nile Boat Cruise",
+        "market": "Khan El-Khalili Bazaar",
+        "history": "Historical Landmarks Tour"
+      }
     },
     "maldives": {
       "name": "Maldives",
-      "desc": "Crystal-clear waters, coral reefs, and relaxing luxury resorts."
+      "desc": "Escape to paradise. The Maldives offer white sand beaches, turquoise waters, and luxury resorts like no other.",
+      "highlights": {
+        "resorts": "Luxury Beach Resorts",
+        "diving": "Coral Reef Diving",
+        "sunset": "Romantic Sunset Views"
+      },
+      "activities": {
+        "snorkeling": "Snorkeling Adventure",
+        "relax": "Spa and Relaxation",
+        "cruise": "Private Island Cruise"
+      }
     }
   },
 
@@ -95,6 +136,17 @@
   "title": "Our Tours",
   "subtitle": "Explore the world with us and find your next great adventure",
   "bookNow": "Book Now"
-}
+},
+
+
+  "details": {
+    "aboutDestination": "About This Destination",
+    "bestTime": "Best Time to Visit",
+    "highlights": "Top Highlights",
+        "information":"information",
+    "gallery":"gallery",
+    "activities": "Popular Activities"
+  }
+ 
 
 }
