@@ -7,7 +7,7 @@ import { themes } from "@/app/config/themeConfig";
 import { contactData } from "@/app/data/contactData";
 
 export default function ConnectPage() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const { theme } = useTheme();
   const isArabic = i18n.language === "ar";
   const currentTheme = themes[theme];

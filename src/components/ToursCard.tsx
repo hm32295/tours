@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Info } from "lucide-react";
+import {  Info } from "lucide-react";
 
 type ToursProps = {
   id: number;
@@ -64,7 +64,7 @@ export default function ToursCard({ tour }: { tour: ToursProps }) {
               theme === "dark" ? "text-amber-400" : "text-blue-600"
             }`}
           >
-            💰 {t("tours_.details.price") || "السعر"}: {tour.price}
+             {t("tours_.details.price") || "السعر"}: {tour.price}
           </p>
 
           {/* <p className={`text-sm ${currentTheme.textSecondary}`}>

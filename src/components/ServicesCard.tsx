@@ -4,7 +4,7 @@ import { themes } from "@/app/config/themeConfig";
 import { useTheme } from "@/context/ThemeContext";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { LucideIcon, ArrowRight } from "lucide-react";
+import {  ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type PropsType = {
@@ -14,7 +14,7 @@ type PropsType = {
     descKey: string;
   };
   index: number;
-  Icon: LucideIcon;
+  Icon: React.ElementType;
 };
 
 export default function ServicesCard({ service, index, Icon }: PropsType) {
