@@ -1,6 +1,6 @@
 export const contactData = {
   title_en: "Get in Touch",
-  phone:'00201124475468',
+  phone:'+201124475468',
   title_ar: "تواصل معنا",
   subtitle_en:
     "We’d love to hear from you! Whether you have a question, feedback, or a business inquiry — drop us a message.",

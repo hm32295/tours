@@ -38,7 +38,7 @@ export default function Destinations() {
     >
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <motion.h2
-          className={`text-5xl sm:text-6xl font-extrabold mb-20 tracking-tight ${themes[theme].text}`}
+          className={`text-5xl capitalize sm:text-6xl font-extrabold mb-20 tracking-tight ${themes[theme].text}`}
           initial={{ opacity: 0, y: -60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

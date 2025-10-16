@@ -1,12 +1,15 @@
-
 export interface Tour {
   id: number;
   name_en: string;
   name_ar: string;
   price: string;
   img: string;
+  duration: string;
+  rating: number;
+  description_en: string;
+  description_ar: string;
+  features: string[];
 }
-
 
 export const tours: Tour[] = [
   {
@@ -15,6 +18,11 @@ export const tours: Tour[] = [
     name_ar: "مغامرة باريس",
     price: "$499",
     img: "/tours1.jpeg",
+    duration: "5 days / 4 nights",
+    rating: 4.8,
+    description_en: "Discover the romance of Paris — Eiffel Tower, Seine River, and art-filled streets.",
+    description_ar: "اكتشف سحر باريس — برج إيفل، نهر السين، والشوارع المليئة بالفن.",
+    features: ["Eiffel Tower visit", "Seine cruise", "City tour", "Luxury accommodation"],
   },
   {
     id: 2,
@@ -22,6 +30,11 @@ export const tours: Tour[] = [
     name_ar: "جنة بالي",
     price: "$699",
     img: "/tours2.jpeg",
+    duration: "7 days / 6 nights",
+    rating: 4.9,
+    description_en: "Relax in the tropical beauty of Bali with beaches, temples, and yoga retreats.",
+    description_ar: "استمتع بجمال بالي الاستوائي مع الشواطئ والمعابد وجلسات اليوغا الهادئة.",
+    features: ["Beach resort", "Temple tour", "Waterfalls", "Local cuisine"],
   },
   {
     id: 3,
@@ -29,6 +42,11 @@ export const tours: Tour[] = [
     name_ar: "ملاذ جبال الألب السويسرية",
     price: "$899",
     img: "/tours3.jpeg",
+    duration: "6 days / 5 nights",
+    rating: 4.7,
+    description_en: "Breathtaking views, snow-capped peaks, and luxury mountain lodges.",
+    description_ar: "مناظر خلابة، قمم مغطاة بالثلوج، وإقامة فاخرة بين الجبال.",
+    features: ["Mountain hiking", "Cable car ride", "Luxury stay", "Swiss chocolate tasting"],
   },
   {
     id: 4,
@@ -36,6 +54,11 @@ export const tours: Tour[] = [
     name_ar: "أهرامات مصر",
     price: "$399",
     img: "/tours4.jpeg",
+    duration: "3 days / 2 nights",
+    rating: 4.6,
+    description_en: "Explore the wonders of ancient Egypt — the Pyramids, Sphinx, and museum.",
+    description_ar: "اكتشف عجائب مصر القديمة — الأهرامات، أبو الهول، والمتحف المصري.",
+    features: ["Giza Pyramids tour", "Sphinx visit", "Museum entry", "Camel ride"],
   },
   {
     id: 5,
@@ -43,6 +66,11 @@ export const tours: Tour[] = [
     name_ar: "رحلة الغردقة",
     price: "$399",
     img: "/tours5.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.8,
+    description_en: "Enjoy Red Sea adventures — snorkeling, diving, and desert safaris.",
+    description_ar: "استمتع بمغامرات البحر الأحمر — الغوص والسنوركل والسفاري في الصحراء.",
+    features: ["Snorkeling trip", "Desert safari", "Luxury resort", "Seafood dinner"],
   },
   {
     id: 6,
@@ -50,6 +78,11 @@ export const tours: Tour[] = [
     name_ar: "ملاذ المالديف",
     price: "$1099",
     img: "/tours6.jpeg",
+    duration: "6 days / 5 nights",
+    rating: 4.9,
+    description_en: "A dreamy tropical escape with turquoise waters and private villas.",
+    description_ar: "ملاذ استوائي ساحر بمياه فيروزية وفيلات خاصة فاخرة.",
+    features: ["Private villa", "Spa session", "Island tour", "Candlelight dinner"],
   },
   {
     id: 7,
@@ -57,6 +90,11 @@ export const tours: Tour[] = [
     name_ar: "اكتشاف طوكيو",
     price: "$899",
     img: "/tours1.jpeg",
+    duration: "5 days / 4 nights",
+    rating: 4.7,
+    description_en: "Dive into Japan’s culture, cuisine, and cutting-edge technology.",
+    description_ar: "اكتشف ثقافة اليابان ومأكولاتها وتطورها التقني المذهل.",
+    features: ["Shibuya crossing", "Temple visit", "Sushi tasting", "Shopping tour"],
   },
   {
     id: 8,
@@ -64,6 +102,11 @@ export const tours: Tour[] = [
     name_ar: "جولة دبي الفاخرة",
     price: "$799",
     img: "/tours2.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.8,
+    description_en: "Luxury, innovation, and desert charm — all in one unforgettable city.",
+    description_ar: "الفخامة والابتكار وسحر الصحراء في مدينة لا تُنسى.",
+    features: ["Burj Khalifa visit", "Desert safari", "Luxury dinner", "Shopping mall tour"],
   },
   {
     id: 9,
@@ -71,6 +114,11 @@ export const tours: Tour[] = [
     name_ar: "سفاري كينيا",
     price: "$999",
     img: "/tours3.jpeg",
+    duration: "6 days / 5 nights",
+    rating: 4.9,
+    description_en: "Witness wildlife in its natural habitat with guided safari tours.",
+    description_ar: "شاهد الحياة البرية في موطنها الطبيعي مع جولات سفاري مذهلة.",
+    features: ["Game drives", "Wildlife photography", "Luxury camp", "Local village tour"],
   },
   {
     id: 10,
@@ -78,6 +126,11 @@ export const tours: Tour[] = [
     name_ar: "تراث إسطنبول",
     price: "$599",
     img: "/tours4.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.6,
+    description_en: "A journey through the heart of history, culture, and cuisine.",
+    description_ar: "رحلة عبر قلب التاريخ والثقافة والمأكولات التركية.",
+    features: ["Blue Mosque", "Grand Bazaar", "Bosphorus cruise", "Turkish bath"],
   },
   {
     id: 11,
@@ -85,6 +138,11 @@ export const tours: Tour[] = [
     name_ar: "ملاذ سانتوريني",
     price: "$899",
     img: "/tours5.jpeg",
+    duration: "5 days / 4 nights",
+    rating: 4.8,
+    description_en: "White houses, blue domes, and romantic sunsets over the Aegean.",
+    description_ar: "منازل بيضاء وقباب زرقاء وغروب شمس رومانسي فوق بحر إيجة.",
+    features: ["Sunset cruise", "Local winery", "Cliff views", "Luxury stay"],
   },
   {
     id: 12,
@@ -92,6 +150,11 @@ export const tours: Tour[] = [
     name_ar: "سحر مراكش",
     price: "$549",
     img: "/tours6.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.7,
+    description_en: "A colorful adventure through markets, palaces, and desert beauty.",
+    description_ar: "مغامرة ملونة بين الأسواق والقصور وسحر الصحراء.",
+    features: ["Souk visit", "Palace tour", "Desert night", "Moroccan dinner"],
   },
   {
     id: 13,
@@ -99,6 +162,11 @@ export const tours: Tour[] = [
     name_ar: "استكشاف لندن",
     price: "$749",
     img: "/tours1.jpeg",
+    duration: "5 days / 4 nights",
+    rating: 4.7,
+    description_en: "Experience royal landmarks, modern vibes, and historical charm.",
+    description_ar: "استمتع بالمعالم الملكية والأجواء الحديثة والسحر التاريخي.",
+    features: ["Big Ben", "London Eye", "Museum visit", "City walking tour"],
   },
   {
     id: 14,
@@ -106,6 +174,11 @@ export const tours: Tour[] = [
     name_ar: "عجائب البتراء",
     price: "$459",
     img: "/tours2.jpeg",
+    duration: "3 days / 2 nights",
+    rating: 4.8,
+    description_en: "Discover the rose-red city carved into the rocks of Jordan.",
+    description_ar: "اكتشف المدينة الوردية المنحوتة في صخور الأردن.",
+    features: ["Petra site tour", "Canyon walk", "Cultural dinner", "Desert camp"],
   },
   {
     id: 15,
@@ -113,6 +186,11 @@ export const tours: Tour[] = [
     name_ar: "متعة شواطئ ملقا",
     price: "$499",
     img: "/tours3.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.6,
+    description_en: "Sunny beaches, Spanish charm, and coastal adventures.",
+    description_ar: "شواطئ مشمسة وسحر إسباني ومغامرات بحرية ممتعة.",
+    features: ["Beach games", "Old town tour", "Seafood lunch", "Boat ride"],
   },
   {
     id: 16,
@@ -120,6 +198,11 @@ export const tours: Tour[] = [
     name_ar: "مناطيد كابادوكيا",
     price: "$699",
     img: "/tours4.jpeg",
+    duration: "3 days / 2 nights",
+    rating: 4.9,
+    description_en: "Fly over stunning rock formations in Turkey’s dreamlike landscape.",
+    description_ar: "حلّق فوق التكوينات الصخرية الخلابة في كابادوكيا الساحرة.",
+    features: ["Balloon ride", "Cave hotel", "Village walk", "Turkish breakfast"],
   },
   {
     id: 17,
@@ -127,6 +210,11 @@ export const tours: Tour[] = [
     name_ar: "أنوار نيويورك",
     price: "$899",
     img: "/tours5.jpeg",
+    duration: "5 days / 4 nights",
+    rating: 4.8,
+    description_en: "The city that never sleeps — lights, Broadway, and skyline views.",
+    description_ar: "المدينة التي لا تنام — الأضواء وبرودواي وأفق المدينة الساحر.",
+    features: ["Statue of Liberty", "Times Square", "Broadway show", "Skyline tour"],
   },
   {
     id: 18,
@@ -134,6 +222,11 @@ export const tours: Tour[] = [
     name_ar: "هدوء سيشيل",
     price: "$1099",
     img: "/tours6.jpeg",
+    duration: "6 days / 5 nights",
+    rating: 4.9,
+    description_en: "Crystal waters, white sands, and peaceful island vibes.",
+    description_ar: "مياه صافية، رمال بيضاء، وأجواء جزيرة هادئة مريحة.",
+    features: ["Private beach", "Snorkeling", "Spa package", "Sunset dinner"],
   },
   {
     id: 19,
@@ -141,6 +234,11 @@ export const tours: Tour[] = [
     name_ar: "كلاسيكيات روما",
     price: "$799",
     img: "/tours1.jpeg",
+    duration: "4 days / 3 nights",
+    rating: 4.7,
+    description_en: "Walk through history in the Eternal City — art, food, and culture.",
+    description_ar: "تجول في مدينة التاريخ الخالدة — الفن والطعام والثقافة.",
+    features: ["Colosseum", "Vatican tour", "Pasta workshop", "City walking tour"],
   },
   {
     id: 20,
@@ -148,5 +246,10 @@ export const tours: Tour[] = [
     name_ar: "جولة القاهرة الثقافية",
     price: "$349",
     img: "/tours2.jpeg",
+    duration: "3 days / 2 nights",
+    rating: 4.6,
+    description_en: "Explore the capital’s mix of history, culture, and local life.",
+    description_ar: "استكشف مزيج التاريخ والثقافة والحياة المحلية في العاصمة.",
+    features: ["Museum visit", "Khan el-Khalili", "Nile dinner cruise", "Old Cairo tour"],
   },
-]
+];

@@ -92,9 +92,32 @@
   "guide": { "title": "Tour Guide Services", "desc": "Local guides for authentic experiences." },
   "offers": { "title": "Special Offers", "desc": "Exclusive deals and discounts all year round." },
   "support": { "title": "24/7 Support", "desc": "We are always available to assist you." },
-  "corporate": { "title": "Corporate Services", "desc": "Customized business travel and partnerships." }
-}
-,
+  "corporate": { "title": "Corporate Services", "desc": "Customized business travel and partnerships." },
+
+  
+  "common": {
+    "back": "Back",
+    "bookNow": "Book Now",
+    "serviceNotFound": "❌ Service Not Found",
+    "moreDetails":"more details"
+  },
+  "services": {
+    "flight": {
+      "title": "Flight Booking",
+      "desc": "We offer the best flight deals with premium service."
+    },
+    "hotel": {
+      "title": "Hotel Booking",
+      "desc": "Get the best luxury hotel deals worldwide."
+    }
+  },
+  "details": {
+    "price": "Price",
+    "duration": "Duration",
+    "rating": "Rating",
+    "features": "Highlights"
+  }
+},
 
    "testimonials_title": "What Our Clients Say",
 
@@ -135,7 +158,27 @@
 "tours_":{
   "title": "Our Tours",
   "subtitle": "Explore the world with us and find your next great adventure",
-  "bookNow": "Book Now"
+  "bookNow": "Book Now",
+  "moreDetails" : "more details",
+
+    "common": {
+      "back": "Back",
+      "bookNow": "Book Now",
+      "tourNotFound": "Tour not found"
+    },
+    "details": {
+      "subtitle": "Enjoy an unforgettable travel experience with our exclusive tour packages",
+      "price": "Price",
+      "duration": "Duration",
+      "days": "days",
+      "nights": "nights",
+      "rating": "Rating",
+      "desc": "An exceptional experience that includes top destinations, comfortable accommodation, and exciting activities to make your trip truly unforgettable.",
+      "features": "Tour Highlights"
+    }
+  
+
+
 },
 
 
@@ -143,7 +186,7 @@
     "aboutDestination": "About This Destination",
     "bestTime": "Best Time to Visit",
     "highlights": "Top Highlights",
-        "information":"information",
+    "information":"information",
     "gallery":"gallery",
     "bookNow":"book Now",
     "activities": "Popular Activities"
